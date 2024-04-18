@@ -19,5 +19,3 @@ Encriptador basado en AES en un FPGA DE10-Lite
 
 | Supervisors  |                Israel, José Aguilar, Ezzat y Ricardo             |
 |--------------|------------------------------------------------------------------|
-
-ola
