@@ -20,10 +20,12 @@ Encriptador basado en AES en un FPGA DE10-Lite
 | Supervisors  |                Israel, José Aguilar, Ezzat y Ricardo             |
 |--------------|------------------------------------------------------------------|
 
+
 ## Modules
 |               |    Modules    |
 |---------------|---------------|
-|    AddRound   |     Pending   |
+|    AddRound   |     Done      |
 |    SubBytes   |     Pending   |
 |    MixColumn  |     Pending   |
 |    ShiftRow   |     Pending   |
+
