@@ -1,82 +1,152 @@
 ----------------------------------------------------------------------------------
--- Company:				ITESM - IRS 2024
--- 
--- Create Date: 		16/04/2024
--- Design Name: 		Shift Row TestBench
--- Module Name:		Shift Row Module TestBench
--- Target Devices: 	DE10-Lite
--- Description: 		TestBench del módulo Shift Row
+-- Company:          ITESM - IRS 2024
+-- Authors:          Tomás Pérez Vera, Ulises Carrizalez Lerín
+-- Create Date:      21/04/2024
+-- Design Name:      ShiftRow_tb
+-- Module Name:      ShiftRow Testbench
+-- Target Devices:   DE10-Lite
+-- Description:      ShiftRow Component for the AES Encryptor
 --
--- Version 0.0 - File Creation
--- Additional Comments: 
---
+-- Version 2.0 - File Creation
 ----------------------------------------------------------------------------------
 
 -- Commonly used libraries
-library IEEE;
-use IEEE.std_logic_1164.all;
-use IEEE.numeric_std.all;
-use IEEE.std_logic_unsigned.all;
+library ieee; 
+use ieee.std_logic_1164.all;
+-- Packages use for arithmetic operations
+use IEEE.NUMERIC_STD.ALL;
+use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
--- Entity declaration for testbench
-entity YourEntityName_tb is
-end YourEntityName_tb;
+-- Testbench entity does not include any Port definition
+entity ShiftRow_tb is
+end entity ShiftRow_tb;
 
--- Architecture definition for testbench
-architecture tb_architecture of YourEntityName_tb is
-
-    -- Constants declaration
-    constant CLK_PERIOD : time := 10 ns;  -- Clock period (adjust as needed)
-
-    -- Signals declaration
-    signal input_port_1_tb : std_logic := '0';  -- Test input signals
-    signal input_port_2_tb : std_logic := '0';
-    signal output_port_1_tb : std_logic;  -- Test output signals
-    signal output_port_2_tb : std_logic;
-
-    -- Component declaration for DUT (Device Under Test)
-    component YourEntityName
+architecture testbench of ShiftRow_tb is
+     -- Component to be simulated declaration
+     -- Use exactly the same names used in the entity section
+    component ShiftRow
         Port (
-            input_port_1 : in std_logic;
-            input_port_2 : in std_logic;
-            output_port_1 : out std_logic;
-            output_port_2 : out std_logic
+            clk    : in  std_logic;
+            rst    : in  std_logic;
+            enable : in  std_logic;
+            finish : out std_logic;
+            DataIn : in  std_logic_vector(127 downto 0);
+            DataOut: out std_logic_vector(127 downto 0)
         );
     end component;
 
-    -- Clock process
+    -- Declare the input, output and clock signals used to instantiate the DUT
+     -- Input Signals for test bench
+    signal clk_tb     : std_logic := '0';
+    signal rst_tb     : std_logic := '0';
+    signal enable_tb  : std_logic := '0';
+    signal DataIn_tb  : std_logic_vector(127 downto 0) := (others => '0');
+   
+    -- Output Signals for test bench
+    signal finish_tb  : std_logic;
+    signal DataOut_tb : std_logic_vector(127 downto 0);
+     
+     -- Clock period definitions
+    constant clk_period : time := 100 ns;
+
+begin
+    -- Instantiate the ShiftRows component
+    uut : ShiftRow
+        port map (
+            clk     => clk_tb,
+            rst     => rst_tb,
+            enable  => enable_tb,
+            finish  => finish_tb,
+            DataIn  => DataIn_tb,
+            DataOut => DataOut_tb
+        );
+
+   -- Clock process to define its waveform, no sensitivity list
+   clk_process: process
+   begin
+        clk_tb <= '0';
+        wait for clk_period/2;
+        clk_tb <= '1';
+        wait for clk_period/2;
+   end process;
+
+    -- Stimulus process (test cases)
     process
     begin
-        while now < 1000 ns loop  -- Simulate for 1000 ns
-            wait for CLK_PERIOD / 2;
-            input_port_1_tb <= not input_port_1_tb;  -- Toggle the clock
-        end loop;
-        wait;
+       -- hold reset state for 100 ns.
+        rst_tb    <= '1';
+      wait for clk_period;
+		
+      -- Input data, case 1
+		-- BEGIN: Case 1
+        DataIn_tb <= x"D4E0B81E27BFB44111985D52AEF1E530";
+        rst_tb    <= '0';
+        enable_tb <= '1'; -- Signal from Master FSM to start transfomation
+      wait for 200 ns;
+          
+        -- Master FSM sends an acknowledge signal to send finish signal back to '0'
+        enable_tb <= '0';
+        wait for 100 ns;
+
+      wait; -- Continue until end of simulation time
+		--End: Case 1
+		
+--		-- Input data, case 2
+--		-- BEGIN: Case 2
+--        DataIn_tb <= x"0123456789ABCDEF0123456789ABCDEF";
+--        rst_tb    <= '0';
+--        enable_tb <= '1'; -- Signal from Master FSM to start transfomation
+--      wait for 200 ns;
+--          
+--        -- Master FSM sends an acknowledge signal to send finish signal back to '0'
+--        enable_tb <= '0';
+--        wait for 100 ns;
+--
+--      wait; -- Continue until end of simulation time
+--		--End: Case 2
+		
+		-- Input data, case 3
+--		-- BEGIN: Case 3
+--        DataIn_tb <= x"FEDCBA9876543210FEDCBA9876543210";
+--        rst_tb    <= '0';
+--        enable_tb <= '1'; -- Signal from Master FSM to start transfomation
+--      wait for 200 ns;
+--          
+--        -- Master FSM sends an acknowledge signal to send finish signal back to '0'
+--        enable_tb <= '0';
+--        wait for 100 ns;
+--
+--      wait; -- Continue until end of simulation time
+--		--End: Case 3
+		
+		-- Input data, case 4
+--		-- BEGIN: Case 4
+--        DataIn_tb <= x"ABCDEF0123456789ABCDEF0123456789";
+--        rst_tb    <= '0';
+--        enable_tb <= '1'; -- Signal from Master FSM to start transfomation
+--      wait for 200 ns;
+--          
+--        -- Master FSM sends an acknowledge signal to send finish signal back to '0'
+--        enable_tb <= '0';
+--        wait for 100 ns;
+--
+--      wait; -- Continue until end of simulation time
+--		--End: Case 4
+		
+		-- Input data, case 5
+--		-- BEGIN: Case 4
+--        DataIn_tb <= x"0246813579ACEBDF0246813579ACEBDF";
+--        rst_tb    <= '0';
+--        enable_tb <= '1'; -- Signal from Master FSM to start transfomation
+--      wait for 200 ns;
+--          
+--        -- Master FSM sends an acknowledge signal to send finish signal back to '0'
+--        enable_tb <= '0';
+--        wait for 100 ns;
+--
+--      wait; -- Continue until end of simulation time
+--		--End: Case 5
+
     end process;
 
-    -- Stimulus process
-    process
-    begin
-        -- Stimulus generation here
-        -- You can write test vectors or any stimuli for your inputs here
-        -- Example:
-        input_port_2_tb <= '0';
-        wait for 20 ns;
-        input_port_2_tb <= '1';
-        wait for 40 ns;
-        input_port_2_tb <= '0';
-        wait;
-    end process;
-
-    -- Instantiate the DUT
-    begin
-        dut: YourEntityName
-            port map (
-                input_port_1 => input_port_1_tb,
-                input_port_2 => input_port_2_tb,
-                output_port_1 => output_port_1_tb,
-                output_port_2 => output_port_2_tb
-            );
-    end architecture tb_architecture;
-
-end YourEntityName_tb;
+end architecture testbench;
