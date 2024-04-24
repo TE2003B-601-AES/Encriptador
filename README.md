@@ -27,5 +27,5 @@ Encriptador basado en AES en un FPGA DE10-Lite
 |    AddRound   |     Done      |
 |    SubBytes   |     Pending   |
 |    MixColumn  |     Pending   |
-|    ShiftRow   |     Pending   |
+|    ShiftRow   |     Done      |
 

@@ -15,7 +15,7 @@ library IEEE;
 use IEEE.std_logic_1164.all;
 use IEEE.numeric_std.all;
 
-entity AddRoundKey_dp is
+entity AddRound is
     Port (
         -- Input ports
         DataIn : in std_logic_vector(127 downto 0);
@@ -26,9 +26,9 @@ entity AddRoundKey_dp is
         -- Output ports
         DataOut: out std_logic_vector(127 downto 0);
 		  finish : out std_logic);
-end AddRoundKey_dp;
+end AddRound;
 
-architecture Behavioral of AddRoundKey_dp is
+architecture Behavioral of AddRound is
     -- Internal signals
 	 -- Temporary Variable used for the transformation
     shared variable InternalData : std_logic_vector(127 downto 0);

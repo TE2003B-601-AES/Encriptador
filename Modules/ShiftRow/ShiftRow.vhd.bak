@@ -2,10 +2,10 @@
 -- Company:				ITESM - IRS 2024
 -- 
 -- Create Date: 		16/04/2024
--- Design Name: 		Keys
--- Module Name:		Keys Module
+-- Design Name: 		Shift Row
+-- Module Name:		Shift Row Module
 -- Target Devices: 	DE10-Lite
--- Description: 		Keys generator Module
+-- Description: 		Shift Row Module
 --
 -- Version 0.0 - File Creation
 -- Additional Comments: 
