@@ -20,7 +20,7 @@ use IEEE.numeric_std.all;
 use IEEE.std_logic_unsigned.all;
 
 -- Entity declaration
-entity YourEntityName is
+entity Top is
     Port (
         -- Input ports
         input_port_1 : in std_logic;
@@ -29,10 +29,10 @@ entity YourEntityName is
         output_port_1 : out std_logic;
         output_port_2 : out std_logic
     );
-end YourEntityName;
+end Top;
 
 -- Architecture definition
-architecture Behavioral of YourEntityName is
+architecture Behavioral of Top is
 
     -- Internal signals
     signal internal_signal : std_logic;
