@@ -46,6 +46,7 @@ architecture tb_architecture of YourEntityName_tb is
 
     -- Clock process
     process
+	
     begin
         while now < 1000 ns loop  -- Simulate for 1000 ns
             wait for CLK_PERIOD / 2;
