@@ -1,15 +1,13 @@
 ----------------------------------------------------------------------------------
 -- Company:				ITESM - IRS 2024
--- 
+-- Author:           Ricard Catala Garfias
 -- Create Date: 		16/04/2024
 -- Design Name: 		Add Round
 -- Module Name:		Add Round Module
 -- Target Devices: 	DE10-Lite
 -- Description: 		Add Round Module
 --
--- Version 0.0 - File Creation
--- Additional Comments: 
---
+-- Version 2.2 - File Creation
 ----------------------------------------------------------------------------------
 library IEEE;
 use IEEE.std_logic_1164.all;
@@ -18,14 +16,14 @@ use IEEE.numeric_std.all;
 entity AddRound is
     Port (
         -- Input ports
-        DataIn : in std_logic_vector(127 downto 0);
-        DataKey : in std_logic_vector(127 downto 0);
-		  clk : in std_logic;
-		  start : in std_logic;
-		  reset : in std_logic;
+        TxtIn : in std_logic_vector(127 downto 0);
+        KeyIn : in std_logic_vector(127 downto 0);
+		  Clk : in std_logic;
+		  Start : in std_logic;
+		  Rst : in std_logic;
         -- Output ports
-        DataOut: out std_logic_vector(127 downto 0);
-		  finish : out std_logic);
+        TxtOut: out std_logic_vector(127 downto 0);
+		  Finish : out std_logic);
 end AddRound;
 
 architecture Behavioral of AddRound is
@@ -42,23 +40,23 @@ begin
 	-- Section 1: Communications with the Master FSM
 	-- State Register Process
 	-- Holds the current state of the FSM
-	statereg: process (clk, reset)
+	statereg: process (Clk, Rst)
 	begin
-    -- Asynchronous Reset
-    if reset = '1' then
+    -- Asynchronous Rst
+    if Rst = '1' then
        present_state <= St0;
-     elsif rising_edge(clk) then
+     elsif rising_edge(Clk) then
        present_state <= next_state;
      end if;
   end process statereg;
   
   -- Define the Next-State Logic Process
   -- Will obtain the next state based on the inputs and current state
-  fsm: process (present_state, start)
+  fsm: process (present_state, Start)
   begin
     case present_state is
       when St0 => 
-          if start = '0' then
+          if Start = '0' then
             next_state <= St0;
           else
             next_state <= St1; 
@@ -66,7 +64,7 @@ begin
       when St1 =>
             next_state <= St2;
       when St2 =>
-          if start = '0' then
+          if Start = '0' then
             next_state <= St0;
           else
             next_state <= St2; 
@@ -81,28 +79,28 @@ begin
   begin
     case present_state is
        when St0 =>
-          finish <= '0';
+          Finish <= '0';
        when St1 =>
-          finish <= '0';
+          Finish <= '0';
        when St2 =>
-          finish <= '1';
+          Finish <= '1';
       when others =>
-          finish <= '0';
+          Finish <= '0';
     end case;
   end process output;
 	
 	
 	-- Process for AddRoundKeys operation
 
-	operation : process(clk, present_state)
+	operation : process(Clk, present_state)
 	begin
-		if (rising_edge(clk) and present_state = St1) then
+		if (rising_edge(Clk) and present_state = St1) then
 	 
-		-- XOR operation between DataIn and DataKey, store result in InternalData
-		InternalData := DataIn xor DataKey;
+		-- XOR operation between TxtIn and KeyIn, store result in InternalData
+		InternalData := TxtIn xor KeyIn;
 		end if;
 		-- Sent transformation to the output.
-		DataOut <= InternalData;
+		TxtOut <= InternalData;
 	end process operation;
 
 end architecture Behavioral;
