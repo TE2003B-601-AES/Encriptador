@@ -2,10 +2,10 @@
 -- Company:				ITESM - IRS 2024
 -- 
 -- Create Date: 		16/04/2024
--- Design Name: 		Shift Row
--- Module Name:		Shift Row Module
+-- Design Name: 		Mix Column
+-- Module Name:		Mix Column Module
 -- Target Devices: 	DE10-Lite
--- Description: 		Shift Row Module
+-- Description: 		Mix Column Module
 --
 -- Version 0.0 - File Creation
 -- Additional Comments: 
@@ -19,7 +19,7 @@ use IEEE.numeric_std.all;
 use IEEE.std_logic_unsigned.all;
 
 -- Entity declaration
-entity YourEntityName is
+entity MixColumns is
     Port (
         -- Input ports
         input_port_1 : in std_logic;
@@ -28,10 +28,10 @@ entity YourEntityName is
         output_port_1 : out std_logic;
         output_port_2 : out std_logic
     );
-end YourEntityName;
+end MixColumns;
 
 -- Architecture definition
-architecture Behavioral of YourEntityName is
+architecture Behavioral of MixColumns is
 
     -- Internal signals
     signal internal_signal : std_logic;

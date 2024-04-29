@@ -19,13 +19,13 @@ use IEEE.NUMERIC_STD.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 
 -- Testbench entity does not include any Port definition
-entity AddRound_tb is
-end entity AddRound_tb;
+entity AddRoundKey_tb is
+end entity AddRoundKey_tb;
 
-architecture testbench of AddRound_tb is
+architecture testbench of AddRoundKey_tb is
     -- Component to be simulated declaration
      -- Use exactly the same names used in the entity section
-    component AddRound
+    component AddRoundKey
         Port (
             -- Input ports
 			  TxtIn : in std_logic_vector(127 downto 0);
@@ -56,7 +56,7 @@ architecture testbench of AddRound_tb is
 
 begin
     -- Instantiate the ShiftRows component
-    uut : AddRound
+    uut : AddRoundKey
         port map (
 				TxtIn  => TxtIn_tb,
 				KeyIn => KeyIn_tb,
