@@ -34,12 +34,7 @@ architecture tb_architecture of Top_tb is
             output_port_2 : out std_logic
         );
     end component;
-
-<<<<<<< HEAD
-    -- Clock process
-    process
-	
-=======
+ 
     -- Signals declaration
     signal input_port_1_tb : std_logic := '0';  -- Test input signals
     signal input_port_2_tb : std_logic := '0';
@@ -50,7 +45,6 @@ architecture tb_architecture of Top_tb is
     constant CLK_PERIOD : time := 10 ns;  -- Clock period (adjust as needed)
 
 	-- Instantiate the DUT
->>>>>>> aa762eb5ebe97b9fea3f54abb8b10cd238f61c72
     begin
         dut: Top
             port map (
