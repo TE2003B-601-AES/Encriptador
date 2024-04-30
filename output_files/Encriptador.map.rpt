@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Encriptador
-Mon Apr 29 07:47:10 2024
+Mon Apr 29 22:32:01 2024
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -10,13 +10,7 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -43,22 +37,22 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Mon Apr 29 07:47:10 2024       ;
+; Analysis & Synthesis Status        ; Failed - Mon Apr 29 22:32:01 2024           ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; Encriptador                                 ;
 ; Top-level Entity Name              ; Top                                         ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 2                                           ;
-;     Total combinational functions  ; 2                                           ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 4                                           ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
-; UFM blocks                         ; 0                                           ;
-; ADC blocks                         ; 0                                           ;
+; Total logic elements               ; N/A until Partition Merge                   ;
+;     Total combinational functions  ; N/A until Partition Merge                   ;
+;     Dedicated logic registers      ; N/A until Partition Merge                   ;
+; Total registers                    ; N/A until Partition Merge                   ;
+; Total pins                         ; N/A until Partition Merge                   ;
+; Total virtual pins                 ; N/A until Partition Merge                   ;
+; Total memory bits                  ; N/A until Partition Merge                   ;
+; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
+; Total PLLs                         ; N/A until Partition Merge                   ;
+; UFM blocks                         ; N/A until Partition Merge                   ;
+; ADC blocks                         ; N/A until Partition Merge                   ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -153,8 +147,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 12          ;
-; Maximum allowed            ; 6           ;
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 8           ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -164,149 +158,164 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                   ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path            ; Library ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------+---------+
-; Top.vhd                          ; yes             ; User VHDL File  ; C:/ProyectosQuartus/Encriptador/Top.vhd ;         ;
-+----------------------------------+-----------------+-----------------+-----------------------------------------+---------+
-
-
-+------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                      ;
-+---------------------------------------------+--------------------+
-; Resource                                    ; Usage              ;
-+---------------------------------------------+--------------------+
-; Estimated Total logic elements              ; 2                  ;
-;                                             ;                    ;
-; Total combinational functions               ; 2                  ;
-; Logic element usage by number of LUT inputs ;                    ;
-;     -- 4 input functions                    ; 0                  ;
-;     -- 3 input functions                    ; 0                  ;
-;     -- <=2 input functions                  ; 2                  ;
-;                                             ;                    ;
-; Logic elements by mode                      ;                    ;
-;     -- normal mode                          ; 2                  ;
-;     -- arithmetic mode                      ; 0                  ;
-;                                             ;                    ;
-; Total registers                             ; 0                  ;
-;     -- Dedicated logic registers            ; 0                  ;
-;     -- I/O registers                        ; 0                  ;
-;                                             ;                    ;
-; I/O pins                                    ; 4                  ;
-;                                             ;                    ;
-; Embedded Multiplier 9-bit elements          ; 0                  ;
-;                                             ;                    ;
-; Maximum fan-out node                        ; input_port_1~input ;
-; Maximum fan-out                             ; 2                  ;
-; Total fan-out                               ; 10                 ;
-; Average fan-out                             ; 1.00               ;
-+---------------------------------------------+--------------------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; |Top                       ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 4    ; 0            ; 0          ; |Top                ; Top         ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 0     ;
-; Number of registers using Synchronous Clear  ; 0     ;
-; Number of registers using Synchronous Load   ; 0     ;
-; Number of registers using Asynchronous Clear ; 0     ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 0     ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; boundary_port         ; 4                           ;
-; cycloneiii_lcell_comb ; 2                           ;
-;     normal            ; 2                           ;
-;         2 data inputs ; 2                           ;
-;                       ;                             ;
-; Max LUT depth         ; 1.00                        ;
-; Average LUT depth     ; 1.00                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:00     ;
-+----------------+--------------+
-
-
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Mon Apr 29 07:46:58 2024
+    Info: Processing started: Mon Apr 29 22:31:45 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Encriptador -c Encriptador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
+Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file top.vhd
-    Info (12022): Found design unit 1: Top-Behavioral File: C:/ProyectosQuartus/Encriptador/Top.vhd Line: 35
-    Info (12023): Found entity 1: Top File: C:/ProyectosQuartus/Encriptador/Top.vhd Line: 23
+    Info (12022): Found design unit 1: Top-Behavioral File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Top.vhd Line: 35
+    Info (12023): Found entity 1: Top File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Top.vhd Line: 23
 Info (12021): Found 2 design units, including 1 entities, in source file top_tb.vhd
-    Info (12022): Found design unit 1: Top_tb-tb_architecture File: C:/ProyectosQuartus/Encriptador/Top_tb.vhd Line: 26
-    Info (12023): Found entity 1: Top_tb File: C:/ProyectosQuartus/Encriptador/Top_tb.vhd Line: 22
-Info (12021): Found 2 design units, including 1 entities, in source file modules/addround/addround.vhd
-    Info (12022): Found design unit 1: AddRound-Behavioral File: C:/ProyectosQuartus/Encriptador/Modules/AddRound/AddRound.vhd Line: 31
-    Info (12023): Found entity 1: AddRound File: C:/ProyectosQuartus/Encriptador/Modules/AddRound/AddRound.vhd Line: 18
-Info (12021): Found 2 design units, including 1 entities, in source file modules/addround/addround_tb.vhd
-    Info (12022): Found design unit 1: AddRound_tb-testbench File: C:/ProyectosQuartus/Encriptador/Modules/AddRound/AddRound_tb.vhd Line: 25
-    Info (12023): Found entity 1: AddRound_tb File: C:/ProyectosQuartus/Encriptador/Modules/AddRound/AddRound_tb.vhd Line: 22
+    Info (12022): Found design unit 1: Top_tb-tb_architecture File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Top_tb.vhd Line: 26
+    Info (12023): Found entity 1: Top_tb File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Top_tb.vhd Line: 22
+Info (12021): Found 2 design units, including 1 entities, in source file modules/addroundkey/addroundkey.vhd
+    Info (12022): Found design unit 1: AddRoundKey-Behavioral File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/AddRoundKey/AddRoundKey.vhd Line: 29
+    Info (12023): Found entity 1: AddRoundKey File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/AddRoundKey/AddRoundKey.vhd Line: 16
+Info (12021): Found 2 design units, including 1 entities, in source file modules/addroundkey/addroundkey_tb.vhd
+    Info (12022): Found design unit 1: AddRoundKey_tb-testbench File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/AddRoundKey/AddRoundKey_tb.vhd Line: 25
+    Info (12023): Found entity 1: AddRoundKey_tb File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/AddRoundKey/AddRoundKey_tb.vhd Line: 22
+Info (12021): Found 2 design units, including 1 entities, in source file modules/mixcolumns/mixcolumns.vhd
+    Info (12022): Found design unit 1: MixColumns-Behavioral File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/MixColumns/MixColumns.vhd Line: 35
+    Info (12023): Found entity 1: MixColumns File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/MixColumns/MixColumns.vhd Line: 21
+Info (12021): Found 2 design units, including 1 entities, in source file modules/mixcolumns/mixcolumns_tb.vhd
+    Info (12022): Found design unit 1: MixColumns_tb-behavior File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/MixColumns/MixColumns_tb.vhd Line: 27
+    Info (12023): Found entity 1: MixColumns_tb File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/MixColumns/MixColumns_tb.vhd Line: 23
+Info (12021): Found 2 design units, including 1 entities, in source file modules/shiftrows/shiftrows.vhd
+    Info (12022): Found design unit 1: ShiftRows-Behavioural File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/ShiftRows/ShiftRows.vhd Line: 33
+    Info (12023): Found entity 1: ShiftRows File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/ShiftRows/ShiftRows.vhd Line: 21
+Info (12021): Found 2 design units, including 1 entities, in source file modules/shiftrows/shiftrows_tb.vhd
+    Info (12022): Found design unit 1: ShiftRows_tb-testbench File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/ShiftRows/ShiftRows_tb.vhd Line: 24
+    Info (12023): Found entity 1: ShiftRows_tb File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/ShiftRows/ShiftRows_tb.vhd Line: 21
 Info (12021): Found 2 design units, including 1 entities, in source file modules/subbytes/subbytes.vhd
-    Info (12022): Found design unit 1: SubBytes-Behavioral File: C:/ProyectosQuartus/Encriptador/Modules/SubBytes/SubBytes.vhd Line: 34
-    Info (12023): Found entity 1: SubBytes File: C:/ProyectosQuartus/Encriptador/Modules/SubBytes/SubBytes.vhd Line: 22
-Info (12021): Found 2 design units, including 1 entities, in source file modules/shiftrow/shiftrow.vhd
-    Info (12022): Found design unit 1: ShiftRows-Behavioural File: C:/ProyectosQuartus/Encriptador/Modules/ShiftRow/ShiftRow.vhd Line: 33
-    Info (12023): Found entity 1: ShiftRows File: C:/ProyectosQuartus/Encriptador/Modules/ShiftRow/ShiftRow.vhd Line: 21
-Info (12021): Found 2 design units, including 1 entities, in source file modules/mixcolumn/mixcolumn.vhd
-    Info (12022): Found design unit 1: MixColumn-Behavioral File: C:/ProyectosQuartus/Encriptador/Modules/MixColumn/MixColumn.vhd Line: 34
-    Info (12023): Found entity 1: MixColumn File: C:/ProyectosQuartus/Encriptador/Modules/MixColumn/MixColumn.vhd Line: 22
+    Info (12022): Found design unit 1: SubBytes-Behavioral File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/SubBytes/SubBytes.vhd Line: 35
+    Info (12023): Found entity 1: SubBytes File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/SubBytes/SubBytes.vhd Line: 21
 Info (12021): Found 2 design units, including 1 entities, in source file modules/subbytes/subbytes_tb.vhd
-    Info (12022): Found design unit 1: SubBytes_tb-tb_architecture File: C:/ProyectosQuartus/Encriptador/Modules/SubBytes/SubBytes_tb.vhd Line: 26
-    Info (12023): Found entity 1: SubBytes_tb File: C:/ProyectosQuartus/Encriptador/Modules/SubBytes/SubBytes_tb.vhd Line: 22
-Info (12021): Found 2 design units, including 1 entities, in source file modules/shiftrow/shiftrow_tb.vhd
-    Info (12022): Found design unit 1: ShiftRows_tb-testbench File: C:/ProyectosQuartus/Encriptador/Modules/ShiftRow/ShiftRow_tb.vhd Line: 24
-    Info (12023): Found entity 1: ShiftRows_tb File: C:/ProyectosQuartus/Encriptador/Modules/ShiftRow/ShiftRow_tb.vhd Line: 21
-Info (12021): Found 2 design units, including 1 entities, in source file modules/mixcolumn/mixcolumn_tb.vhd
-    Info (12022): Found design unit 1: MixColumn_tb-tb_architecture File: C:/ProyectosQuartus/Encriptador/Modules/MixColumn/MixColumn_tb.vhd Line: 26
-    Info (12023): Found entity 1: MixColumn_tb File: C:/ProyectosQuartus/Encriptador/Modules/MixColumn/MixColumn_tb.vhd Line: 22
+    Info (12022): Found design unit 1: SubBytes_tb-testbench File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/SubBytes/SubBytes_tb.vhd Line: 26
+    Info (12023): Found entity 1: SubBytes_tb File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/SubBytes/SubBytes_tb.vhd Line: 22
+Info (12021): Found 2 design units, including 1 entities, in source file modules/statemachine/statemachine.vhd
+    Info (12022): Found design unit 1: StateMachine-StateMachine_Arch File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 61
+    Info (12023): Found entity 1: StateMachine File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 25
 Info (12127): Elaborating entity "Top" for the top level hierarchy
-Warning (10036): Verilog HDL or VHDL warning at Top.vhd(38): object "internal_signal" assigned a value but never read File: C:/ProyectosQuartus/Encriptador/Top.vhd Line: 38
-Info (286030): Timing-Driven Synthesis is running
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 6 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 2 output pins
-    Info (21061): Implemented 2 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
-    Info: Peak virtual memory: 4822 megabytes
-    Info: Processing ended: Mon Apr 29 07:47:10 2024
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:11
+Warning (10541): VHDL Signal Declaration warning at Top.vhd(173): used implicit default value for signal "MuxOut_emb" because signal was never assigned a value or an explicit default value. Use of implicit default value may introduce unintended design optimizations. File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Top.vhd Line: 173
+Info (12128): Elaborating entity "AddRoundKey" for hierarchy "AddRoundKey:u1" File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Top.vhd Line: 194
+Info (12128): Elaborating entity "SubBytes" for hierarchy "SubBytes:u2" File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Top.vhd Line: 205
+Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "State" into its bus
+Info (12128): Elaborating entity "ShiftRows" for hierarchy "ShiftRows:u3" File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Top.vhd Line: 215
+Info (12128): Elaborating entity "MixColumns" for hierarchy "MixColumns:u4" File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Top.vhd Line: 225
+Info (12128): Elaborating entity "StateMachine" for hierarchy "StateMachine:u11" File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Top.vhd Line: 295
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(88): signal "Finish_Key" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 88
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(95): signal "Finish_AddRound0" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 95
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(102): signal "Finish_SubBytes_loop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 102
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(109): signal "Finish_ShiftRow_loop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 109
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(116): signal "Finish_MixColumns_loop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 116
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(123): signal "Finish_AddRoundKey_loop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 123
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(123): signal "Count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 123
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(125): signal "Finish_AddRoundKey_loop" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 125
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(125): signal "Count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 125
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(127): signal "Count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 127
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(133): signal "Finish_SubBytes_final" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 133
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(140): signal "Finish_ShiftRow_final" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 140
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(147): signal "Finish_AddRoundKey_final" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 147
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(154): signal "Finish_AddRoundKey_final" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 154
+Warning (10631): VHDL Process Statement warning at StateMachine.vhd(84): inferring latch(es) for signal or variable "Count", which holds its previous value in one or more paths through the process File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Warning (10492): VHDL Process Statement warning at StateMachine.vhd(192): signal "Count" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 192
+Warning (10631): VHDL Process Statement warning at StateMachine.vhd(169): inferring latch(es) for signal or variable "Start_Key", which holds its previous value in one or more paths through the process File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Warning (10631): VHDL Process Statement warning at StateMachine.vhd(169): inferring latch(es) for signal or variable "Start_AddRound0", which holds its previous value in one or more paths through the process File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Warning (10631): VHDL Process Statement warning at StateMachine.vhd(169): inferring latch(es) for signal or variable "Key_Sel", which holds its previous value in one or more paths through the process File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Warning (10631): VHDL Process Statement warning at StateMachine.vhd(169): inferring latch(es) for signal or variable "MuxSel", which holds its previous value in one or more paths through the process File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Warning (10631): VHDL Process Statement warning at StateMachine.vhd(169): inferring latch(es) for signal or variable "Start_SubBytes_loop", which holds its previous value in one or more paths through the process File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Warning (10631): VHDL Process Statement warning at StateMachine.vhd(169): inferring latch(es) for signal or variable "Start_ShiftRow_loop", which holds its previous value in one or more paths through the process File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Warning (10631): VHDL Process Statement warning at StateMachine.vhd(169): inferring latch(es) for signal or variable "Start_MixColumns_loop", which holds its previous value in one or more paths through the process File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Warning (10631): VHDL Process Statement warning at StateMachine.vhd(169): inferring latch(es) for signal or variable "Start_AddRoundKey_loop", which holds its previous value in one or more paths through the process File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Warning (10631): VHDL Process Statement warning at StateMachine.vhd(169): inferring latch(es) for signal or variable "Start_SubBytes_final", which holds its previous value in one or more paths through the process File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Warning (10631): VHDL Process Statement warning at StateMachine.vhd(169): inferring latch(es) for signal or variable "Start_ShiftRow_final", which holds its previous value in one or more paths through the process File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Warning (10631): VHDL Process Statement warning at StateMachine.vhd(169): inferring latch(es) for signal or variable "Start_AddRoundKey_final", which holds its previous value in one or more paths through the process File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Start_AddRoundKey_final" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Start_ShiftRow_final" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Start_SubBytes_final" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Start_AddRoundKey_loop" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Start_MixColumns_loop" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Start_ShiftRow_loop" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Start_SubBytes_loop" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "MuxSel" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[0]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[1]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[2]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[3]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[4]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[5]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[6]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[7]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[8]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[9]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[10]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[11]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[12]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[13]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[14]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[15]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[16]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[17]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[18]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[19]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[20]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[21]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[22]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[23]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[24]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[25]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[26]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[27]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[28]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[29]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[30]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Key_Sel[31]" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Start_AddRound0" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Start_Key" at StateMachine.vhd(169) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 169
+Info (10041): Inferred latch for "Count[0]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[1]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[2]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[3]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[4]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[5]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[6]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[7]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[8]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[9]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[10]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[11]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[12]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[13]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[14]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[15]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[16]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[17]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[18]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[19]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[20]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[21]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[22]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[23]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[24]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[25]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[26]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[27]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[28]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[29]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[30]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Info (10041): Inferred latch for "Count[31]" at StateMachine.vhd(84) File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Modules/StateMachine/StateMachine.vhd Line: 84
+Error (12006): Node instance "u9" instantiates undefined entity "MUXSubBytes". Ensure that required library paths are specified correctly, define the specified entity, or change the instantiation. If this entity represents Intel FPGA or third-party IP, generate the synthesis files for the IP. File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Top.vhd Line: 277
+Error (12006): Node instance "u10" instantiates undefined entity "KeySchedule". Ensure that required library paths are specified correctly, define the specified entity, or change the instantiation. If this entity represents Intel FPGA or third-party IP, generate the synthesis files for the IP. File: E:/ricki/Documents/TEC/4Semestre/QuartusProjects/AES/Encriptador/Top.vhd Line: 285
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 29 warnings
+    Error: Peak virtual memory: 4802 megabytes
+    Error: Processing ended: Mon Apr 29 22:32:01 2024
+    Error: Elapsed time: 00:00:16
+    Error: Total CPU time (on all processors): 00:00:20
 
 
