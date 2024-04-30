@@ -19,7 +19,7 @@ use IEEE.numeric_std.all;
 use IEEE.std_logic_unsigned.all;
 
 -- Entity declaration
-entity SubBytes is
+entity YourEntityName is
     Port (
         -- Input ports
         input_port_1 : in std_logic;
@@ -28,10 +28,10 @@ entity SubBytes is
         output_port_1 : out std_logic;
         output_port_2 : out std_logic
     );
-end SubBytes;
+end YourEntityName;
 
 -- Architecture definition
-architecture Behavioral of SubBytes is
+architecture Behavioral of YourEntityName is
 
     -- Internal signals
     signal internal_signal : std_logic;

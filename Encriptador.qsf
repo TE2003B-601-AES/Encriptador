@@ -64,43 +64,36 @@ set_global_assignment -name EDA_TEST_BENCH_NAME Top_tb -section_id eda_simulatio
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id Top_tb
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "200 ns" -section_id Top_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Top_tb -section_id Top_tb
-set_global_assignment -name VHDL_FILE Modules/AddRound/AddRound.vhd
-set_global_assignment -name VHDL_FILE Modules/AddRound/AddRound_tb.vhd
-set_global_assignment -name EDA_TEST_BENCH_NAME AddRound_tb -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id AddRound_tb
-set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "200 ns" -section_id AddRound_tb
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME AddRound_tb -section_id AddRound_tb
-set_global_assignment -name VHDL_FILE Modules/SubBytes/SubBytes.vhd
-set_global_assignment -name VHDL_FILE Modules/ShiftRow/ShiftRow.vhd
-set_global_assignment -name VHDL_FILE Modules/MixColumn/MixColumn.vhd
-set_global_assignment -name VHDL_FILE Modules/SubBytes/SubBytes_tb.vhd
-set_global_assignment -name VHDL_FILE Modules/ShiftRow/ShiftRow_tb.vhd
-set_global_assignment -name VHDL_FILE Modules/MixColumn/MixColumn_tb.vhd
-set_global_assignment -name VHDL_FILE Modules/Keys/Keys.vhd
-set_global_assignment -name VHDL_FILE Modules/Keys/Keys_tb.vhd
-set_global_assignment -name EDA_TEST_BENCH_FILE Top_tb.vhd -section_id Top_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE Modules/AddRound/AddRound_tb.vhd -section_id AddRound_tb
 set_global_assignment -name EDA_TEST_BENCH_NAME SubBytes_tb -section_id eda_simulation
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id SubBytes_tb
 set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "200 ns" -section_id SubBytes_tb
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME SubBytes_tb -section_id SubBytes_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE Modules/SubBytes/SubBytes_tb.vhd -section_id SubBytes_tb
-set_global_assignment -name EDA_TEST_BENCH_NAME ShiftRow_tb -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id ShiftRow_tb
-set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "200 ns" -section_id ShiftRow_tb
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME ShiftRow_tb -section_id ShiftRow_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE Modules/ShiftRow/ShiftRow_tb.vhd -section_id ShiftRow_tb
-set_global_assignment -name EDA_TEST_BENCH_NAME MixColumn -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id MixColumn
-set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "200 ns" -section_id MixColumn
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME MixColumn -section_id MixColumn
-set_global_assignment -name EDA_TEST_BENCH_FILE Modules/MixColumn/MixColumn_tb.vhd -section_id MixColumn
-set_global_assignment -name EDA_TEST_BENCH_NAME Keys_tb -section_id eda_simulation
-set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id Keys_tb
-set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "200 ns" -section_id Keys_tb
-set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME Keys_tb -section_id Keys_tb
-set_global_assignment -name EDA_TEST_BENCH_FILE Modules/Keys/Keys_tb.vhd -section_id Keys_tb
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
+set_global_assignment -name VHDL_FILE Modules/AddRoundKey/AddRoundKey.vhd
+set_global_assignment -name VHDL_FILE Modules/AddRoundKey/AddRoundKey_tb.vhd
+set_global_assignment -name VHDL_FILE Modules/MixColumns/MixColumns.vhd
+set_global_assignment -name VHDL_FILE Modules/MixColumns/MixColumns_tb.vhd
+set_global_assignment -name VHDL_FILE Modules/ShiftRows/ShiftRows.vhd
+set_global_assignment -name VHDL_FILE Modules/ShiftRows/ShiftRows_tb.vhd
+set_global_assignment -name VHDL_FILE Modules/SubBytes/SubBytes.vhd
+set_global_assignment -name VHDL_FILE Modules/SubBytes/SubBytes_tb.vhd
+set_global_assignment -name EDA_TEST_BENCH_FILE Top_tb.vhd -section_id Top_tb
+set_global_assignment -name EDA_TEST_BENCH_NAME AddRoundKey_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id AddRoundKey_tb
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "200 ns" -section_id AddRoundKey_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME AddRoundKey_tb -section_id AddRoundKey_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE Modules/AddRoundKey/AddRoundKey_tb.vhd -section_id AddRoundKey_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE Modules/SubBytes/SubBytes_tb.vhd -section_id SubBytes_tb
+set_global_assignment -name EDA_TEST_BENCH_NAME ShiftRows_tb -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id ShiftRows_tb
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "200 ns" -section_id ShiftRows_tb
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME ShiftRows_tb -section_id ShiftRows_tb
+set_global_assignment -name EDA_TEST_BENCH_FILE Modules/ShiftRows/ShiftRows_tb.vhd -section_id ShiftRows_tb
+set_global_assignment -name EDA_TEST_BENCH_NAME MixColumns -section_id eda_simulation
+set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id MixColumns
+set_global_assignment -name EDA_TEST_BENCH_RUN_SIM_FOR "200 ns" -section_id MixColumns
+set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME MixColumns -section_id MixColumns
+set_global_assignment -name EDA_TEST_BENCH_FILE Modules/MixColumns/MixColumns_tb.vhd -section_id MixColumns

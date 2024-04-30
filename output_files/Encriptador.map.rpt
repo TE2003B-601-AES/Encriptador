@@ -1,5 +1,5 @@
 Analysis & Synthesis report for Encriptador
-Wed Apr 24 07:51:06 2024
+Mon Apr 29 07:47:10 2024
 Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
 
 
@@ -10,7 +10,13 @@ Quartus Prime Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Post-Synthesis Netlist Statistics for Top Partition
+ 10. Elapsed Time Per Partition
+ 11. Analysis & Synthesis Messages
 
 
 
@@ -37,22 +43,22 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Failed - Wed Apr 24 07:51:06 2024           ;
+; Analysis & Synthesis Status        ; Successful - Mon Apr 29 07:47:10 2024       ;
 ; Quartus Prime Version              ; 21.1.0 Build 842 10/21/2021 SJ Lite Edition ;
 ; Revision Name                      ; Encriptador                                 ;
 ; Top-level Entity Name              ; Top                                         ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; N/A until Partition Merge                   ;
-;     Total combinational functions  ; N/A until Partition Merge                   ;
-;     Dedicated logic registers      ; N/A until Partition Merge                   ;
-; Total registers                    ; N/A until Partition Merge                   ;
-; Total pins                         ; N/A until Partition Merge                   ;
-; Total virtual pins                 ; N/A until Partition Merge                   ;
-; Total memory bits                  ; N/A until Partition Merge                   ;
-; Embedded Multiplier 9-bit elements ; N/A until Partition Merge                   ;
-; Total PLLs                         ; N/A until Partition Merge                   ;
-; UFM blocks                         ; N/A until Partition Merge                   ;
-; ADC blocks                         ; N/A until Partition Merge                   ;
+; Total logic elements               ; 2                                           ;
+;     Total combinational functions  ; 2                                           ;
+;     Dedicated logic registers      ; 0                                           ;
+; Total registers                    ; 0                                           ;
+; Total pins                         ; 4                                           ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 0                                           ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
+; UFM blocks                         ; 0                                           ;
+; ADC blocks                         ; 0                                           ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -158,78 +164,149 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
++--------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                   ;
++----------------------------------+-----------------+-----------------+-----------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type       ; File Name with Absolute Path            ; Library ;
++----------------------------------+-----------------+-----------------+-----------------------------------------+---------+
+; Top.vhd                          ; yes             ; User VHDL File  ; C:/ProyectosQuartus/Encriptador/Top.vhd ;         ;
++----------------------------------+-----------------+-----------------+-----------------------------------------+---------+
+
+
++------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                      ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Estimated Total logic elements              ; 2                  ;
+;                                             ;                    ;
+; Total combinational functions               ; 2                  ;
+; Logic element usage by number of LUT inputs ;                    ;
+;     -- 4 input functions                    ; 0                  ;
+;     -- 3 input functions                    ; 0                  ;
+;     -- <=2 input functions                  ; 2                  ;
+;                                             ;                    ;
+; Logic elements by mode                      ;                    ;
+;     -- normal mode                          ; 2                  ;
+;     -- arithmetic mode                      ; 0                  ;
+;                                             ;                    ;
+; Total registers                             ; 0                  ;
+;     -- Dedicated logic registers            ; 0                  ;
+;     -- I/O registers                        ; 0                  ;
+;                                             ;                    ;
+; I/O pins                                    ; 4                  ;
+;                                             ;                    ;
+; Embedded Multiplier 9-bit elements          ; 0                  ;
+;                                             ;                    ;
+; Maximum fan-out node                        ; input_port_1~input ;
+; Maximum fan-out                             ; 2                  ;
+; Total fan-out                               ; 10                 ;
+; Average fan-out                             ; 1.00               ;
++---------------------------------------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+; |Top                       ; 2 (2)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 4    ; 0            ; 0          ; |Top                ; Top         ; work         ;
++----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 4                           ;
+; cycloneiii_lcell_comb ; 2                           ;
+;     normal            ; 2                           ;
+;         2 data inputs ; 2                           ;
+;                       ;                             ;
+; Max LUT depth         ; 1.00                        ;
+; Average LUT depth     ; 1.00                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:00     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.0 Build 842 10/21/2021 SJ Lite Edition
-    Info: Processing started: Wed Apr 24 07:50:57 2024
+    Info: Processing started: Mon Apr 29 07:46:58 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off Encriptador -c Encriptador
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 6 of the 6 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file top.vhd
-    Info (12022): Found design unit 1: YourEntityName-Behavioral File: C:/Proyectos/Encriptador/Top.vhd Line: 35
-    Info (12023): Found entity 1: YourEntityName File: C:/Proyectos/Encriptador/Top.vhd Line: 23
-Error (10500): VHDL syntax error at Top_tb.vhd(48) near text "process";  expecting "begin", or a declaration statement File: C:/Proyectos/Encriptador/Top_tb.vhd Line: 48
-Error (10500): VHDL syntax error at Top_tb.vhd(54) near text "loop";  expecting ";", or an identifier ("loop" is a reserved keyword), or "architecture" File: C:/Proyectos/Encriptador/Top_tb.vhd Line: 54
-Error (10500): VHDL syntax error at Top_tb.vhd(73) near text "begin";  expecting "end", or "(", or an identifier ("begin" is a reserved keyword), or a concurrent statement File: C:/Proyectos/Encriptador/Top_tb.vhd Line: 73
-Error (10500): VHDL syntax error at Top_tb.vhd(83) near text "end";  expecting "entity", or "architecture", or "use", or "library", or "package", or "configuration" File: C:/Proyectos/Encriptador/Top_tb.vhd Line: 83
-Info (12021): Found 0 design units, including 0 entities, in source file top_tb.vhd
-Error (10430): VHDL Primary Unit Declaration error at AddRound.vhd(22): primary unit "YourEntityName" already exists in library "work". Compile the two primary units into different libraries or assign them unique names. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Proyectos/Encriptador/Modules/AddRound/AddRound.vhd Line: 22
-Error (10784): HDL error at Top.vhd(23): see declaration for object "YourEntityName" File: C:/Proyectos/Encriptador/Top.vhd Line: 23
-Info (12021): Found 0 design units, including 0 entities, in source file modules/addround/addround.vhd
-Error (10430): VHDL Primary Unit Declaration error at AddRound_tb.vhd(22): primary unit "YourEntityName_tb" already exists in library "work". Compile the two primary units into different libraries or assign them unique names. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Proyectos/Encriptador/Modules/AddRound/AddRound_tb.vhd Line: 22
-Error (10784): HDL error at Top_tb.vhd(22): see declaration for object "YourEntityName_tb" File: C:/Proyectos/Encriptador/Top_tb.vhd Line: 22
-Error (10500): VHDL syntax error at AddRound_tb.vhd(48) near text "process";  expecting "begin", or a declaration statement File: C:/Proyectos/Encriptador/Modules/AddRound/AddRound_tb.vhd Line: 48
-Error (10500): VHDL syntax error at AddRound_tb.vhd(53) near text "loop";  expecting ";", or an identifier ("loop" is a reserved keyword), or "architecture" File: C:/Proyectos/Encriptador/Modules/AddRound/AddRound_tb.vhd Line: 53
-Error (10500): VHDL syntax error at AddRound_tb.vhd(72) near text "begin";  expecting "end", or "(", or an identifier ("begin" is a reserved keyword), or a concurrent statement File: C:/Proyectos/Encriptador/Modules/AddRound/AddRound_tb.vhd Line: 72
-Error (10500): VHDL syntax error at AddRound_tb.vhd(82) near text "end";  expecting "entity", or "architecture", or "use", or "library", or "package", or "configuration" File: C:/Proyectos/Encriptador/Modules/AddRound/AddRound_tb.vhd Line: 82
-Info (12021): Found 0 design units, including 0 entities, in source file modules/addround/addround_tb.vhd
-Error (10430): VHDL Primary Unit Declaration error at SubBytes.vhd(22): primary unit "YourEntityName" already exists in library "work". Compile the two primary units into different libraries or assign them unique names. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Proyectos/Encriptador/Modules/SubBytes/SubBytes.vhd Line: 22
-Error (10784): HDL error at Top.vhd(23): see declaration for object "YourEntityName" File: C:/Proyectos/Encriptador/Top.vhd Line: 23
-Info (12021): Found 0 design units, including 0 entities, in source file modules/subbytes/subbytes.vhd
+    Info (12022): Found design unit 1: Top-Behavioral File: C:/ProyectosQuartus/Encriptador/Top.vhd Line: 35
+    Info (12023): Found entity 1: Top File: C:/ProyectosQuartus/Encriptador/Top.vhd Line: 23
+Info (12021): Found 2 design units, including 1 entities, in source file top_tb.vhd
+    Info (12022): Found design unit 1: Top_tb-tb_architecture File: C:/ProyectosQuartus/Encriptador/Top_tb.vhd Line: 26
+    Info (12023): Found entity 1: Top_tb File: C:/ProyectosQuartus/Encriptador/Top_tb.vhd Line: 22
+Info (12021): Found 2 design units, including 1 entities, in source file modules/addround/addround.vhd
+    Info (12022): Found design unit 1: AddRound-Behavioral File: C:/ProyectosQuartus/Encriptador/Modules/AddRound/AddRound.vhd Line: 31
+    Info (12023): Found entity 1: AddRound File: C:/ProyectosQuartus/Encriptador/Modules/AddRound/AddRound.vhd Line: 18
+Info (12021): Found 2 design units, including 1 entities, in source file modules/addround/addround_tb.vhd
+    Info (12022): Found design unit 1: AddRound_tb-testbench File: C:/ProyectosQuartus/Encriptador/Modules/AddRound/AddRound_tb.vhd Line: 25
+    Info (12023): Found entity 1: AddRound_tb File: C:/ProyectosQuartus/Encriptador/Modules/AddRound/AddRound_tb.vhd Line: 22
+Info (12021): Found 2 design units, including 1 entities, in source file modules/subbytes/subbytes.vhd
+    Info (12022): Found design unit 1: SubBytes-Behavioral File: C:/ProyectosQuartus/Encriptador/Modules/SubBytes/SubBytes.vhd Line: 34
+    Info (12023): Found entity 1: SubBytes File: C:/ProyectosQuartus/Encriptador/Modules/SubBytes/SubBytes.vhd Line: 22
 Info (12021): Found 2 design units, including 1 entities, in source file modules/shiftrow/shiftrow.vhd
-    Info (12022): Found design unit 1: ShiftRow-Behavioural File: C:/Proyectos/Encriptador/Modules/ShiftRow/ShiftRow.vhd Line: 33
-    Info (12023): Found entity 1: ShiftRow File: C:/Proyectos/Encriptador/Modules/ShiftRow/ShiftRow.vhd Line: 21
-Error (10430): VHDL Primary Unit Declaration error at MixColumn.vhd(22): primary unit "YourEntityName" already exists in library "work". Compile the two primary units into different libraries or assign them unique names. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Proyectos/Encriptador/Modules/MixColumn/MixColumn.vhd Line: 22
-Error (10784): HDL error at Top.vhd(23): see declaration for object "YourEntityName" File: C:/Proyectos/Encriptador/Top.vhd Line: 23
-Info (12021): Found 0 design units, including 0 entities, in source file modules/mixcolumn/mixcolumn.vhd
-Error (10430): VHDL Primary Unit Declaration error at SubBytes_tb.vhd(22): primary unit "YourEntityName_tb" already exists in library "work". Compile the two primary units into different libraries or assign them unique names. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Proyectos/Encriptador/Modules/SubBytes/SubBytes_tb.vhd Line: 22
-Error (10784): HDL error at Top_tb.vhd(22): see declaration for object "YourEntityName_tb" File: C:/Proyectos/Encriptador/Top_tb.vhd Line: 22
-Error (10500): VHDL syntax error at SubBytes_tb.vhd(48) near text "process";  expecting "begin", or a declaration statement File: C:/Proyectos/Encriptador/Modules/SubBytes/SubBytes_tb.vhd Line: 48
-Error (10500): VHDL syntax error at SubBytes_tb.vhd(53) near text "loop";  expecting ";", or an identifier ("loop" is a reserved keyword), or "architecture" File: C:/Proyectos/Encriptador/Modules/SubBytes/SubBytes_tb.vhd Line: 53
-Error (10500): VHDL syntax error at SubBytes_tb.vhd(72) near text "begin";  expecting "end", or "(", or an identifier ("begin" is a reserved keyword), or a concurrent statement File: C:/Proyectos/Encriptador/Modules/SubBytes/SubBytes_tb.vhd Line: 72
-Error (10500): VHDL syntax error at SubBytes_tb.vhd(82) near text "end";  expecting "entity", or "architecture", or "use", or "library", or "package", or "configuration" File: C:/Proyectos/Encriptador/Modules/SubBytes/SubBytes_tb.vhd Line: 82
-Info (12021): Found 0 design units, including 0 entities, in source file modules/subbytes/subbytes_tb.vhd
-Error (10430): VHDL Primary Unit Declaration error at ShiftRow_tb.vhd(174): primary unit "YourEntityName_tb" already exists in library "work". Compile the two primary units into different libraries or assign them unique names. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Proyectos/Encriptador/Modules/ShiftRow/ShiftRow_tb.vhd Line: 174
-Error (10784): HDL error at Top_tb.vhd(22): see declaration for object "YourEntityName_tb" File: C:/Proyectos/Encriptador/Top_tb.vhd Line: 22
-Error (10500): VHDL syntax error at ShiftRow_tb.vhd(200) near text "process";  expecting "begin", or a declaration statement File: C:/Proyectos/Encriptador/Modules/ShiftRow/ShiftRow_tb.vhd Line: 200
-Error (10500): VHDL syntax error at ShiftRow_tb.vhd(205) near text "loop";  expecting ";", or an identifier ("loop" is a reserved keyword), or "architecture" File: C:/Proyectos/Encriptador/Modules/ShiftRow/ShiftRow_tb.vhd Line: 205
-Error (10500): VHDL syntax error at ShiftRow_tb.vhd(224) near text "begin";  expecting "end", or "(", or an identifier ("begin" is a reserved keyword), or a concurrent statement File: C:/Proyectos/Encriptador/Modules/ShiftRow/ShiftRow_tb.vhd Line: 224
-Error (10500): VHDL syntax error at ShiftRow_tb.vhd(234) near text "end";  expecting "entity", or "architecture", or "use", or "library", or "package", or "configuration" File: C:/Proyectos/Encriptador/Modules/ShiftRow/ShiftRow_tb.vhd Line: 234
-Info (12021): Found 0 design units, including 0 entities, in source file modules/shiftrow/shiftrow_tb.vhd
-Error (10430): VHDL Primary Unit Declaration error at MixColumn_tb.vhd(22): primary unit "YourEntityName_tb" already exists in library "work". Compile the two primary units into different libraries or assign them unique names. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Proyectos/Encriptador/Modules/MixColumn/MixColumn_tb.vhd Line: 22
-Error (10784): HDL error at Top_tb.vhd(22): see declaration for object "YourEntityName_tb" File: C:/Proyectos/Encriptador/Top_tb.vhd Line: 22
-Error (10500): VHDL syntax error at MixColumn_tb.vhd(48) near text "process";  expecting "begin", or a declaration statement File: C:/Proyectos/Encriptador/Modules/MixColumn/MixColumn_tb.vhd Line: 48
-Error (10500): VHDL syntax error at MixColumn_tb.vhd(53) near text "loop";  expecting ";", or an identifier ("loop" is a reserved keyword), or "architecture" File: C:/Proyectos/Encriptador/Modules/MixColumn/MixColumn_tb.vhd Line: 53
-Error (10500): VHDL syntax error at MixColumn_tb.vhd(72) near text "begin";  expecting "end", or "(", or an identifier ("begin" is a reserved keyword), or a concurrent statement File: C:/Proyectos/Encriptador/Modules/MixColumn/MixColumn_tb.vhd Line: 72
-Error (10500): VHDL syntax error at MixColumn_tb.vhd(82) near text "end";  expecting "entity", or "architecture", or "use", or "library", or "package", or "configuration" File: C:/Proyectos/Encriptador/Modules/MixColumn/MixColumn_tb.vhd Line: 82
-Info (12021): Found 0 design units, including 0 entities, in source file modules/mixcolumn/mixcolumn_tb.vhd
-Error (10430): VHDL Primary Unit Declaration error at Keys.vhd(22): primary unit "YourEntityName" already exists in library "work". Compile the two primary units into different libraries or assign them unique names. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Proyectos/Encriptador/Modules/Keys/Keys.vhd Line: 22
-Error (10784): HDL error at Top.vhd(23): see declaration for object "YourEntityName" File: C:/Proyectos/Encriptador/Top.vhd Line: 23
-Info (12021): Found 0 design units, including 0 entities, in source file modules/keys/keys.vhd
-Error (10430): VHDL Primary Unit Declaration error at Keys_tb.vhd(22): primary unit "YourEntityName_tb" already exists in library "work". Compile the two primary units into different libraries or assign them unique names. The Intel FPGA Knowledge Database contains many articles with specific details on how to resolve this error. Visit the Knowledge Database at https://www.altera.com/support/support-resources/knowledge-base/search.html and search for this specific error message number. File: C:/Proyectos/Encriptador/Modules/Keys/Keys_tb.vhd Line: 22
-Error (10784): HDL error at Top_tb.vhd(22): see declaration for object "YourEntityName_tb" File: C:/Proyectos/Encriptador/Top_tb.vhd Line: 22
-Error (10500): VHDL syntax error at Keys_tb.vhd(48) near text "process";  expecting "begin", or a declaration statement File: C:/Proyectos/Encriptador/Modules/Keys/Keys_tb.vhd Line: 48
-Error (10500): VHDL syntax error at Keys_tb.vhd(53) near text "loop";  expecting ";", or an identifier ("loop" is a reserved keyword), or "architecture" File: C:/Proyectos/Encriptador/Modules/Keys/Keys_tb.vhd Line: 53
-Error (10500): VHDL syntax error at Keys_tb.vhd(72) near text "begin";  expecting "end", or "(", or an identifier ("begin" is a reserved keyword), or a concurrent statement File: C:/Proyectos/Encriptador/Modules/Keys/Keys_tb.vhd Line: 72
-Error (10500): VHDL syntax error at Keys_tb.vhd(82) near text "end";  expecting "entity", or "architecture", or "use", or "library", or "package", or "configuration" File: C:/Proyectos/Encriptador/Modules/Keys/Keys_tb.vhd Line: 82
-Info (12021): Found 0 design units, including 0 entities, in source file modules/keys/keys_tb.vhd
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 42 errors, 1 warning
-    Error: Peak virtual memory: 4789 megabytes
-    Error: Processing ended: Wed Apr 24 07:51:06 2024
-    Error: Elapsed time: 00:00:09
-    Error: Total CPU time (on all processors): 00:00:14
+    Info (12022): Found design unit 1: ShiftRows-Behavioural File: C:/ProyectosQuartus/Encriptador/Modules/ShiftRow/ShiftRow.vhd Line: 33
+    Info (12023): Found entity 1: ShiftRows File: C:/ProyectosQuartus/Encriptador/Modules/ShiftRow/ShiftRow.vhd Line: 21
+Info (12021): Found 2 design units, including 1 entities, in source file modules/mixcolumn/mixcolumn.vhd
+    Info (12022): Found design unit 1: MixColumn-Behavioral File: C:/ProyectosQuartus/Encriptador/Modules/MixColumn/MixColumn.vhd Line: 34
+    Info (12023): Found entity 1: MixColumn File: C:/ProyectosQuartus/Encriptador/Modules/MixColumn/MixColumn.vhd Line: 22
+Info (12021): Found 2 design units, including 1 entities, in source file modules/subbytes/subbytes_tb.vhd
+    Info (12022): Found design unit 1: SubBytes_tb-tb_architecture File: C:/ProyectosQuartus/Encriptador/Modules/SubBytes/SubBytes_tb.vhd Line: 26
+    Info (12023): Found entity 1: SubBytes_tb File: C:/ProyectosQuartus/Encriptador/Modules/SubBytes/SubBytes_tb.vhd Line: 22
+Info (12021): Found 2 design units, including 1 entities, in source file modules/shiftrow/shiftrow_tb.vhd
+    Info (12022): Found design unit 1: ShiftRows_tb-testbench File: C:/ProyectosQuartus/Encriptador/Modules/ShiftRow/ShiftRow_tb.vhd Line: 24
+    Info (12023): Found entity 1: ShiftRows_tb File: C:/ProyectosQuartus/Encriptador/Modules/ShiftRow/ShiftRow_tb.vhd Line: 21
+Info (12021): Found 2 design units, including 1 entities, in source file modules/mixcolumn/mixcolumn_tb.vhd
+    Info (12022): Found design unit 1: MixColumn_tb-tb_architecture File: C:/ProyectosQuartus/Encriptador/Modules/MixColumn/MixColumn_tb.vhd Line: 26
+    Info (12023): Found entity 1: MixColumn_tb File: C:/ProyectosQuartus/Encriptador/Modules/MixColumn/MixColumn_tb.vhd Line: 22
+Info (12127): Elaborating entity "Top" for the top level hierarchy
+Warning (10036): Verilog HDL or VHDL warning at Top.vhd(38): object "internal_signal" assigned a value but never read File: C:/ProyectosQuartus/Encriptador/Top.vhd Line: 38
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 6 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 2 input pins
+    Info (21059): Implemented 2 output pins
+    Info (21061): Implemented 2 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 4822 megabytes
+    Info: Processing ended: Mon Apr 29 07:47:10 2024
+    Info: Elapsed time: 00:00:12
+    Info: Total CPU time (on all processors): 00:00:11
 
 

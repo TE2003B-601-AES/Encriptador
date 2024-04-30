@@ -2,10 +2,10 @@
 -- Company:				ITESM - IRS 2024
 -- 
 -- Create Date: 		16/04/2024
--- Design Name: 		Encriptador TestBench
--- Module Name:		Top Module TestBench
+-- Design Name: 		Mix Column TestBench
+-- Module Name:		Mix Column Module TestBench
 -- Target Devices: 	DE10-Lite
--- Description: 		TestBench del Encriptador basaso en el AES
+-- Description: 		TestBench del módulo Mix Column
 --
 -- Version 0.0 - File Creation
 -- Additional Comments: 
@@ -19,14 +19,14 @@ use IEEE.numeric_std.all;
 use IEEE.std_logic_unsigned.all;
 
 -- Entity declaration for testbench
-entity Top_tb is
-end Top_tb;
+entity MixColumns_tb is
+end MixColumns_tb;
 
 -- Architecture definition for testbench
-architecture tb_architecture of Top_tb is
+architecture tb_architecture of MixColumns_tb is
 
      -- Component declaration for DUT (Device Under Test)
-    component Top
+    component MixColumns
         Port (
             input_port_1 : in std_logic;
             input_port_2 : in std_logic;
@@ -35,11 +35,6 @@ architecture tb_architecture of Top_tb is
         );
     end component;
 
-<<<<<<< HEAD
-    -- Clock process
-    process
-	
-=======
     -- Signals declaration
     signal input_port_1_tb : std_logic := '0';  -- Test input signals
     signal input_port_2_tb : std_logic := '0';
@@ -50,9 +45,8 @@ architecture tb_architecture of Top_tb is
     constant CLK_PERIOD : time := 10 ns;  -- Clock period (adjust as needed)
 
 	-- Instantiate the DUT
->>>>>>> aa762eb5ebe97b9fea3f54abb8b10cd238f61c72
     begin
-        dut: Top
+        dut: MixColumns
             port map (
                 input_port_1 => input_port_1_tb,
                 input_port_2 => input_port_2_tb,
